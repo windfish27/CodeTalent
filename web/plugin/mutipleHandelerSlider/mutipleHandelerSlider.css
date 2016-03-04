@@ -1,0 +1,261 @@
+/*NEW SLIDER STYLES FOR SCALE, ETC*/
+
+/* slider widget */
+
+.ui-slider {
+  text-decoration: none !important;
+}
+.ui-slider .ui-slider-handle {
+  overflow: visible !important;
+}
+.ui-slider .ui-slider-tooltip {
+  display: none;
+}
+.ui-slider .ui-state-active .ui-slider-tooltip,
+.ui-slider .ui-state-focus .ui-slider-tooltip,
+.ui-slider .ui-state-hover .ui-slider-tooltip {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  padding: 0.2em;
+  font-size: 0.9em;
+  width: 14em;
+  /*width: auto;*/
+  margin-left: -4em;
+}
+.ui-slider a {
+  text-decoration: none;
+}
+.ui-slider ol,
+.ui-slider li,
+.ui-slider dl,
+.ui-slider dd,
+.ui-slider dt {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ui-slider ol,
+.ui-slider dl {
+  position: relative;
+  top: 1.3em;
+  width: 100%;
+}
+.ui-slider dt {
+  top: 1.5em;
+  position: absolute;
+  padding-top: 0.2em;
+  text-align: center;
+  border-bottom: 1px dotted #ddd;
+  height: 0.7em;
+  color: #999;
+}
+.ui-slider dt span {
+  background: #fff;
+  padding: 0 0.5em;
+}
+.ui-slider li,
+.ui-slider dd {
+  position: absolute;
+  overflow: visible;
+  color: #666;
+}
+.ui-slider li span.ui-slider-label,
+.ui-slider dd span.ui-slider-label {
+  display: none;
+}
+.ui-slider li span.ui-slider-label-show,
+.ui-slider dd span.ui-slider-label-show {
+  display: block;
+}
+.ui-slider span.ui-slider-tic {
+  position: absolute;
+  left: 0;
+  height: 0.8em;
+  top: -1.3em;
+}
+.ui-slider li span.ui-widget-content,
+.ui-slider dd span.ui-widget-content {
+  border-right: 0;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-top: 0;
+  border-bottom: 0;
+}
+.ui-slider .first .ui-slider-tic,
+.ui-slider .last .ui-slider-tic {
+  display: none;
+}
+.wrapmuSlider{
+  
+}
+.mutipleSlider {
+  margin: 30px 0;
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  border: none;
+}
+.slider-controller {
+  padding-top: 0;
+}
+.slider-controller select {
+  width: 100px;
+}
+.ui-slider .ui-slider-handle{
+  width: 7px;
+  height: 1.4em;
+  margin-left: -3px;
+  top: -0.5em;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  background: #d5cebc;
+}
+/*.ui-slider .ui-slider-handle:hover,.ui-slider .ui-slider-handle:focus{
+  background: #9E9E9E;
+}*/
+
+.ui-slider-range{
+
+}
+.ui-slider-range-text{
+  display: inline-block;
+  width: 60px;
+  color: #fff;
+  position: absolute;
+  margin-left: -30px;
+  text-align: center;
+  top: -25px;
+}
+.ui-slider-range-text h2{
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ddd;
+  margin: 0;
+}
+.ui-slider-range-text p{
+  font-size: 14px;
+  color: #000;
+  margin: 10px 0 0;
+}
+.ui-slider-range.range1 {
+  background: #a3e5f4;
+}
+.ui-slider-range.range2 {
+  background: #f2e079;
+}
+.ui-slider-range.range3 {
+  background: #e6a235;
+}
+.ui-slider-range.range4 {
+  background: #e96223;
+}
+.ui-slider-range.range5 {
+  background: #a18cff;
+}
+.ui-slider-range.range6 {
+  background: #00ffce;
+}
+.ui-slider-range.range7 {
+  background: #faff5a;
+}
+.ui-slider-range.range8 {
+  background: #00cfff;
+}
+.ui-slider-range.range9 {
+  background: #38B75E;
+}
+.ui-slider-range-text.range1 h2{
+  color: #a3e5f4;
+}
+.ui-slider-range-text.range2 h2{
+  color: #f2e079;
+}
+.ui-slider-range-text.range3 h2{
+  color: #e6a235;
+}
+.ui-slider-range-text.range4 h2{
+  color: #e96223;
+}
+.ui-slider-range-text.range5 h2{
+  color: #a18cff;
+}
+.ui-slider-range-text.range6 h2{
+  color: #00ffce;
+}
+.ui-slider-range-text.range7 h2{
+  color: #faff5a;
+}
+.ui-slider-range-text.range8 h2{
+  color: #00cfff;
+}
+.ui-slider-range-text.range9 h2{
+  color: #38B75E;
+}
+.temperature-wake {
+  background-color: #e96223;
+  color: #fff;
+}
+.temperature-leave {
+  background-color: #f2e079;
+}
+.temperature-return {
+  background-color: #e6a235;
+  color: #fff;
+}
+.temperature-sleep {
+  background-color: #a3e5f4;
+}
+.temperatures input {
+  text-align: right;
+}
+.slider-tick-mark-main {
+  display: inline-block;
+  width: 1px;
+  background: #fff;
+  height: 6px;
+  position: absolute;
+  top: 0;
+  font-size: 11px;
+  z-index: 2;
+}
+.slider-tick-mark-main:first-child,.slider-tick-mark-main:last-child{
+  display: none;
+}
+.slider-tick-mark-main-text {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 25px;
+  font-size: 11px;
+  text-align: center;
+  margin-left: -9px;
+  color: #F1F1F1;
+}
+.slider-tick-mark-side {
+  display: inline-block;
+  width: 1px;
+  background: #ccc;
+  height: 5px;
+  position: absolute;
+  top: 15px;
+}
+.slider-tick-mark-side-text {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 25px;
+  font-size: 9px;
+  text-align: center;
+  margin-left: -9px;
+
+}
+.slider span.ui-slider-tooltip {
+  width: auto;
+}

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Resume</title>
+
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="plugin/materalizetag/materialize-tags.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+	<link rel="stylesheet" href="plugin/mutipleHandelerSlider/mutipleHandelerSlider.css">
+	<link rel="stylesheet" href="plugin/slider-pips/jquery-ui-slider-pips.css">
+	<link rel="stylesheet" href="plugin/cropper/cropper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<!-- logo -->
+				<a href="#!" class="brand-logo"><img src="img/Logo.png"></a>
+				<!-- left mobile btn -->
+				<a href="#" data-activates="resume" class="button-collapse resumeleft left"><i class="material-icons">menu</i></a>
+				<!-- right mobile btn -->
+				<a href="#" data-activates="mobile" class="button-collapse menu right"><img class="avatar" src="img/avatarmenu.png"></a>
+				<!-- pc top menu -->
+				<ul class="right hide-on-med-and-down">
+					<li class="active"><a href="#">Resume</a></li>
+					<li><a href="#">Job Demand</a></li>
+					<li><a class="menuavatar" href="#" data-activates='menu-dropdown'><img src="img/avatarmenu.png"><i class="material-icons">arrow_drop_down</i></a></li>
+				</ul>
+				<!-- pc dropdown -->
+				<ul id="menu-dropdown" class="dropdown-content">
+					<li><a href="#">Connection</a></li>
+					<li><a href="#">Export</a></li>
+					<li><a href="#">Log out</a></li>
+				</ul>
+				<!-- resume mobile right menu -->
+				<ul class="side-nav" id="mobile">
+					<li class="active"><a href="#">Resume</a></li>
+					<li><a href="#">Job Demand</a></li>
+					<li><a href="#">Connection</a></li>
+					<li><a href="#">Export</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Log out</a></li>
+				</ul>
+				<!-- resume mobile left menu -->
+				<ul class="side-nav" id="resume">
+					<li><a href="#profile">Profile</a></li>
+					<li><a href="#skill">Skill</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#license">License</a></li>
+					<li><a href="#language">language</a></li>
+					<li><a href="#activity">Activity</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#introduction">Introduction</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<div class="tabs-wrapper z-depth-1 hide-on-med-and-down">
+		<ul class="fix1" id="avatar">
+			<a class="img"><img src="img/avatar.png" alt=""></a>
+		</ul>
+		<ul class="fix2">
+			<li><a href="#profile">Profile</a></li>
+			<li><a href="#skill">Skill</a></li>
+			<li><a href="#education">Education</a></li>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#license">License</a></li>
+			<li><a href="#language">language</a></li>
+			<li><a href="#activity">Activity</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#introduction">Introduction</a></li>
+		</ul>
+	</div>
+	<div id="loadingbar" class="loading">
+		<div class="progress">
+			<div class="indeterminate"></div>
+		</div>
+	</div>
+	<div id="uploadavatar">
+		<div class="inava">
+		<form class="avatar-form z-depth-1" action="crop.php" enctype="multipart/form-data" method="post">
+		<div class="avaheader">
+			<button type="button" class="ava-cancel close btn-flat waves-effect"><i class="material-icons">clear</i></button>
+			<h4 id="avatar-modal-label">Change Avatar</h4>
+		</div>
+		<div class="avatar-body">
+			<!-- Upload image and data -->
+			<div class="file-field avatar-upload">
+				<div class="btn">
+					<span>File</span>
+					<input type="file" class="avatar-input" id="avatarInput" name="avatar_file"/>
+				</div>
+				<div class="file-path-wrapper">
+					
+					<input class="file-path validate" type="text" placeholder=""/>
+					<input type="hidden" class="avatar-src" name="avatar_src">
+									<input type="hidden" class="avatar-data" name="avatar_data">
+					<label>Image</label>
+				</div>
+			</div>
+				<!-- Crop and preview -->
+			<div class="row">
+				<div class="col s12 m12 l8 xl9">
+					<div class="avatar-wrapper"></div>
+				</div>
+				<div class="col s12 m6 l4 xl3 hide-on-med-and-down">
+					<div class="avatar-preview preview-lg"></div>
+					<div class="avatar-preview preview-md"></div>
+					<div class="avatar-preview preview-sm"></div>
+				</div>
+			</div>
+			<div class="avatar-btns">
+				<button type="submit" class="btn-flat waves-effect white">Done</button>
+			</div>
+		</div>
+		</form>
+		</div>
+	</div>
+	<main>
+		<!-- begin block-->
+		<!-- profile -->
+		<div class="block scrollspy" id="profile">
+			<div class="container">
+				<div class="title row">
+					<div class="col s12"><span class="card-title grey-text">Profile</span></div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12">
+						<div class="card nocontrol">
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>First Name</label>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>Last Name</label>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>Role</label>
+										<span class="comment">*EX: Programmer / Designer.</span>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>Nickname</label>
+										<span class="comment">*Your nickname can only be changed once.</span>
+									</div>
+									<div class="input-field col s12 m6 l4 xl2">
+										<select class="browser-default">
+											<option value="" disabled selected>Gender</option>
+											<option value="1">Female</option>
+											<option value="2">Male</option>
+											<option value="3">Other</option>
+										</select>
+										<label class="active">Gender</label>
+									</div>
+									<div class="input-field col s12 m6 l4 xl2">
+										<input placeholder="" type="date" class="datepicker validate">
+										<label class="active">Birthday</label>
+									</div>
+									<div class="input-field col s12 m12 l4 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label class="active">Mobile</label>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col s12">
+										<span class="card-title grey-text">Address</span>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12 m6 l6 xl4">
+										<select class="browser-default">
+											<option value="" disabled selected>Choose your region</option>
+											<option value="1">Africa</option>
+											<option value="2">Asia</option>
+											<option value="3">Europe</option>
+											<option value="4">North America</option>
+											<option value="5">Oceania</option>
+											<option value="6">South America</option>
+										</select>
+										<label class="active">Region</label>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<select class="browser-default">
+											<option value="" disabled selected>Choose your country</option>
+											<option value="1">Country</option>
+										</select>
+										<label class="active">Country</label>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>State / Province</label>
+									</div>
+									<div class="input-field col s12 m6 l6 xl4">
+										<input placeholder="" type="text" class="validate">
+										<label>City</label>
+									</div>
+									<div class="input-field col s12 m12 l9 xl6">
+										<input placeholder="" type="text" class="validate">
+										<label>Address</label>
+									</div>
+									<div class="input-field col s12 m12 l3 xl2">
+										<input placeholder="" type="text" class="validate">
+										<label>Postal Code</label>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- skill -->
+		<div class="block scrollspy" id="skill">
+			<div class="container">
+				<div class="title row">
+					<div class="col s12"><span class="card-title grey-text">Skill</span></div>
+				</div>
+			</div>
+			<div class="container" id="skillcards">
+				<!-- card -->
+				<div class="card">
+					<div class="container pTitle">
+						<div class="row">
+							<div class="col s12">
+								<span class="card-title grey-text">Main Skill</span>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="input-field col s12">
+								<input placeholder="" id="mainSkill" type="text" value="Java,Php" data-role="materialtags">
+								<label>Tags</label>
+							</div>
+							<div class="col s12 mainslider"></div>
+						</div>
+					</div>
+					<div class="card-action">
+						<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+						<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+					</div>
+				</div>
+				<!-- card -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- education -->
+		<div class="block scrollspy" id="education">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">Education</span></div>
+					<div class="col s6 control">
+						<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6">
+						<div class="card">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 control">
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>School</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Attended year</option>
+											<option value="1">199x</option>
+										</select>
+										<label class="active">Attended Year</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Graduation Year</option>
+											<option value="1">199x</option>
+										</select>
+										<label class="active">Graduation Year</label>
+									</div>
+									<div class="input-field col s12">
+										<select class="browser-default">
+											<option value="" disabled selected>Degree</option>
+											<option value="1">Associate Degree</option>
+											<option value="1">Bachelor Degree</option>
+											<option value="1">Master Degree</option>
+											<option value="1">Doctor Degree</option>
+										</select>
+										<label class="active">Degree</label>
+									</div>
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Department</label>
+									</div>
+									<div class="col s12 m5 l12 xl5">
+										<h6>School Rank</h6>
+									</div>
+									<div class="col s12 m7 l12 xl7 schoolrank star">
+										<div class="starbg"><div class="full"></div></div>
+										<h6 class="points"></h6>
+									</div>
+									<div class="col s12 m5 l12 xl5">
+										<h6>Department Rank</h6>
+									</div>
+									<div class="col s12 m7 l12 xl7 deprank star">
+										<div class="starbg"><div class="full"></div></div>
+										<h6 class="points"></h6>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- experience -->
+		<div class="block scrollspy" id="experience">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">Experience</span></div>
+					<div class="col s6 control">
+						<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6 xl6">
+						<div class="card">
+							<div class="container pTitle">
+								<div class="row">
+									<div class="col s12 control">
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Company</label>
+									</div>
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Position</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Month</option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										<label class="active">Time Period Begin</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Year</option>
+											<option value="1">199x</option>
+										</select>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Month</option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										<label class="active">To</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Year</option>
+											<option value="1">199x</option>
+										</select>
+									</div>
+									<div class="col s12">
+										<label>Company Rate</label>
+									</div>
+									<div class="col s12 rate">
+									</div>
+									<div class="input-field col s12">
+										<textarea class="materialize-textarea validate" placeholder=""></textarea>
+										<label>Description</label>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- license -->
+		<div class="block scrollspy" id="license">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">License</span></div>
+					<div class="col s6 control">
+							<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+						</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6 xl4">
+						<div class="card">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 control">
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>License</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Month</option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										<label class="active">Time Period Begin</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Year</option>
+											<option value="1">199x</option>
+										</select>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Month</option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										<label class="active">To</label>
+									</div>
+									<div class="input-field col s6">
+										<select class="browser-default">
+											<option value="" disabled selected>Year</option>
+											<option value="1">199x</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- language -->
+		<div class="block scrollspy" id="language">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">language</span></div>
+					<div class="col s6 control">
+							<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+						</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6 xl4">
+						<div class="card">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 control">
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>language</label>
+									</div>
+									<div class="input-field col s12">
+										<select  class="browser-default">
+											<option value="" disabled selected>Proficiency</option>
+											<option value="0">Native</option>
+											<option value="1">Bilingual</option>
+											<option value="2">Full professional</option>
+											<option value="3">Professional working</option>
+											<option value="4">Limited working</option>
+											<option value="5">Elementary</option>
+										</select>
+										<label class="active">Proficiency</label>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- activity -->
+		<div class="block scrollspy" id="activity">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">Activity</span></div>
+					<div class="col s6 control">
+						<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6 xl4">
+						<div class="card">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 control">
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Activity</label>
+									</div>
+									<div class="input-field col s12">
+										<input placeholder="" type="date" class="datepicker validate">
+										<label>Date</label>
+									</div>
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Location</label>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- portfolio -->
+		<div class="block scrollspy" id="portfolio">
+			<div class="container">
+				<div class="title row">
+					<div class="col s6"><span class="card-title grey-text">Portfolio</span></div>
+					<div class="col s6 control">
+							<a class="circle btn-flat waves-effect"><i class="material-icons">add</i></a>
+						</div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- row begin -->
+				<div class="row">
+					<!-- card -->
+					<div class="col s12 m12 l6 xl6">
+						<div class="card">
+							<div class="container">
+								<div class="row">
+									<div class="col s12 control">
+										<ul class="addshow">
+											<li><a class="circle btn-flat waves-effect"><i class="material-icons">image</i></a></li>
+											<li><a class="circle btn-flat waves-effect"><i class="material-icons">attachment</i></a></li>
+											<li><a class="circle btn-flat waves-effect"><i class="material-icons">link</i></a></li>
+											<li><a class="circle btn-flat waves-effect"><i class="material-icons">videocam</i></a></li>
+										</ul>
+										<a class="circle btn-flat waves-effect addbtn"><i class="material-icons">add</i></a>
+										<a class="circle btn-flat waves-effect"><i class="material-icons">clear</i></a>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="" type="text" class="validate">
+										<label>Title</label>
+									</div>
+									<div class="file-field input-field col s12">
+										<div class="btn">
+											<span>File</span>
+											<input type="file" />
+										</div>
+										<div class="file-path-wrapper">
+											<input class="file-path validate" type="text" placeholder=""/>
+											<label>Image</label>
+										</div>
+									</div>
+									<div class="file-field input-field col s12 doc">
+										<div class="btn">
+											<span>File</span>
+											<input type="file" />
+										</div>
+										<div class="file-path-wrapper">
+											<input class="file-path validate" type="text" placeholder=""/>
+											<label>Document</label>
+										</div>
+									</div>
+									<div class="input-field col s12 video">
+										<input placeholder="" type="text" class="validate">
+										<label>Video Link</label>
+									</div>
+									<div class="input-field col s12 link">
+										<input placeholder="" type="text" class="validate">
+										<label>Link</label>
+									</div>
+									<div class="input-field col s12 dest">
+										<textarea class="materialize-textarea" placeholder=""></textarea>
+										<label>Description</label>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+								<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+							</div>
+						</div>
+					</div>
+					<!-- card -->
+				</div>
+				<!-- row end -->
+			</div>
+		</div>
+		<div class="divider"></div>
+		<!-- introduction -->
+		<div class="block scrollspy" id="introduction">
+			<div class="container">
+				<div class="title row">
+					<div class="col s12"><span class="card-title grey-text">Introduction</span></div>
+				</div>
+			</div>
+			<div class="container">
+				<!-- card -->
+				<div class="card nocontrol">
+					<div class="container">
+						<div class="row">
+							<div class="input-field col s6 link">
+								<input placeholder="" type="text" class="validate">
+								<label>Website Link</label>
+							</div>
+							<div class="input-field col s6 video">
+								<input placeholder="" type="text" class="validate">
+								<label>Video Link</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea class="materialize-textarea validate" placeholder=""></textarea>
+								<label>Introduction</label>
+							</div>
+						</div>
+					</div>
+					<div class="card-action">
+						<button class="btn-flat waves-effect white" type="button" name="action">Cancel</button>
+						<button class="btn-flat waves-effect white" type="button" name="action">Save</button>
+						<button class="btn-flat white disabled" type="button" name="action">Save</button>
+					</div>
+				</div>
+				<!-- card -->
+			</div>
+		</div>
+		<!-- end block -->
+	</main>
+	<footer class="page-footer teal">
+		<div class="footer-copyright">
+			© 2015 CodeTalents, All rights reserved.
+		</div>
+	</footer>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="plugin/materialize.js"></script>
+	<script type="text/javascript" src="plugin/materalizetag/materialize-tags.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	<script src="plugin/mutipleHandelerSlider/mutipleHandelerSlider.js"></script>
+	<script src="plugin/slider-pips/jquery-ui-slider-pips.js"></script>
+	<script src="js/skill.js"></script>
+	<script src="js/rankStar.js"></script>
+	<script src="js/rateStar.js"></script>
+	<script src="plugin/cropper/cropper.min.js"></script>
+	<script src="js/avatar.js"></script>
+	<script type="text/javascript" src="js/resume-card.js"></script>
+</body>
+</html>
